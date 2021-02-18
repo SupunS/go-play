@@ -29,6 +29,8 @@ jobs:
 #        go test `go list ./... | grep -v examples` -coverprofile=coverage.txt -covermode=atomic
 
     - name: Upload coverage report
+      env:
+        ENV_NAME: go-play-env
       uses: codecov/codecov-action@v1.0.2
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
