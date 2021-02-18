@@ -39,7 +39,6 @@ jobs:
         ENV_NAME: go-play-env
       uses: codecov/codecov-action@v1.2.1
       with:
-        token: ${{secrets.CODECOV_TOKEN}}
         file: ./coverage.txt
         flags: unittests
         name: codecov-umbrella
