@@ -1,10 +1,12 @@
-package main
+package go_maps
 
 import (
 	"fmt"
 	"sync"
-	"testGo/maps"
+	"testing"
 	"time"
+
+	"go_play/go_maps/maps"
 )
 
 const N = 100_000
@@ -15,7 +17,8 @@ var keys = [N]string{}
 type foo struct {
 	once sync.Once
 }
-func main() {
+
+func TestMaps(t *testing.T) {
 	var f foo = foo{}
 
 	f.once.Do(func() {
@@ -46,7 +49,7 @@ func main() {
 	fmt.Println("Done!")
 }
 
-func inbuiltMapInsert(){
+func inbuiltMapInsert() {
 
 	start := time.Now()
 	for i := 0; i < M; i++ {
@@ -56,7 +59,7 @@ func inbuiltMapInsert(){
 		}
 	}
 
-	fmt.Println("go map:", time.Now().Sub(start) / M)
+	fmt.Println("go map:", time.Now().Sub(start)/M)
 }
 
 func customMapInsert() {
@@ -68,7 +71,7 @@ func customMapInsert() {
 		}
 	}
 
-	fmt.Println("custom map:", time.Now().Sub(start) / M)
+	fmt.Println("custom map:", time.Now().Sub(start)/M)
 }
 
 func customFastMapInsert() {
@@ -80,11 +83,10 @@ func customFastMapInsert() {
 		}
 	}
 
-	fmt.Println("fast map:", time.Now().Sub(start) / M)
+	fmt.Println("fast map:", time.Now().Sub(start)/M)
 }
 
-
-func inbuiltMapGet(){
+func inbuiltMapGet() {
 	builtinMap := map[string]int{}
 	for i := 0; i < N; i++ {
 		builtinMap[keys[i]] = i
@@ -97,7 +99,7 @@ func inbuiltMapGet(){
 		}
 	}
 
-	fmt.Println("go map:", time.Now().Sub(start) / M)
+	fmt.Println("go map:", time.Now().Sub(start)/M)
 }
 
 func customMapGet() {
@@ -113,7 +115,7 @@ func customMapGet() {
 		}
 	}
 
-	fmt.Println("custom map:", time.Now().Sub(start) / M)
+	fmt.Println("custom map:", time.Now().Sub(start)/M)
 }
 
 func customFastMapGet() {
@@ -129,5 +131,5 @@ func customFastMapGet() {
 		}
 	}
 
-	fmt.Println("fast map:", time.Now().Sub(start) / M)
+	fmt.Println("fast map:", time.Now().Sub(start)/M)
 }

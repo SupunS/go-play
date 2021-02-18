@@ -1,14 +1,15 @@
-package main
+package go_parser
 
 import (
 	"fmt"
-	lex "testGo/lexer"
-	"testGo/readers"
+
+	lex "go_play/go_parser/lexer"
+	"go_play/go_parser/readers"
 )
 
 func main() {
 	fmt.Println("Hello")
-	reader := readers.NewCharReader("/Users/supun/Supun/testGo/main.go")
+	reader := readers.NewCharReader("/Users/supun/Supun/testGo/map_test.go")
 	lexer := lex.NewLexer(&reader)
 
 	for !reader.IsEOF() {

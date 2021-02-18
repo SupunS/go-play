@@ -1,7 +1,7 @@
 package lexer
 
 import (
-	"testGo/readers"
+	"go_play/go_parser/readers"
 )
 
 // Lexer represents a lexer instance
