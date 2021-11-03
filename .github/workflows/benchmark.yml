@@ -36,7 +36,7 @@ jobs:
 
           # Where the previous data file is stored
           external-data-json-path: ./cache/benchmark-data.json
-
+          comment-always: true
           alert-threshold: '100%'
           fail-on-alert: true
           comment-on-alert: true
