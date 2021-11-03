@@ -39,7 +39,7 @@ jobs:
 
           alert-threshold: '100%'
           fail-on-alert: true
-          # comment-on-alert: true
-          # alert-comment-cc-users: '@SupunS'
-          # github-token: ${{ secrets.GITHUB_TOKEN }}
+          comment-on-alert: true
+          alert-comment-cc-users: '@SupunS'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           # auto-push: true
